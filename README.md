@@ -1,1 +1,1 @@
-"Talent Program: &lt;HOHJANNA&gt;"
+"Talent Program: HOHJANNA&gt"
