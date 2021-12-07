@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My first page with Ally and Pug">
+    <title>M1-Talent-Program</title>
+  </head>
+  <body>
+    <header> 
+      <h1 tabindex="0">Make Huge Moves</h1>
+      <nav aria-label="regional-menu">
+        <label for="Language">Language</label>
+        <select id="Language" name="Language">
+          <option selected="selected" value="0">English (EN)</option>
+          <option value="1">Español(ES)</option>
+        </select>
+        <label for="Currency">Currency</label>
+        <select id="Currency" name="Currency">
+          <option selected="selected" value="0">Dollar (USD)</option>
+          <option value="1">Pesos(COP)</option>
+        </select>
+      </nav><a href="#"><img src="/assets/Huge.svg" alt="Huge-logo"></a>
+      <nav> 
+        <ul role="menu"> 
+          <li role="menuitem"><a href="#">Program</a></li>
+          <li role="menuitem"><a href="#">Tech</a></li>
+          <li role="menuitem"><a href="#">Talent</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main> 
+      <div role="region" aria-label="gallery" tabindex="0">
+        <ul> 
+          <li> 
+            <figure><a href="#"><img src="/assets/program-morty.jpg" alt="Rick and Morty"/></a>
+              <figcaption>Program</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <ul> 
+          <li> 
+            <figure><a href="#"><img src="/assets/tech-daft-punk.jpg" alt="Daft Punk"/></a>
+              <figcaption>Tech</figcaption>
+            </figure>
+          </li>
+        </ul>
+        <ul> 
+          <li> 
+            <figure><a href="#"><img src="/assets/talent-gorillaz.jpg" alt="Gorillaz"/></a>
+              <figcaption>Talent</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <h2>Contact form</h2>
+      <form>
+        <fieldset> 
+          <legend>Personal information</legend>
+          <label for="firstName">Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="enter your name">
+          <label for="lastName">Last name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="enter your lastname">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="enter your email">
+        </fieldset>
+        <fieldset>
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+        </fieldset>
+        <button aria-label="send form">Submit </button>
+      </form>
+    </main>
+    <footer><small>Powered by the M1 talent program at </small><b>Huge</b></footer>
+  </body>
+</html>

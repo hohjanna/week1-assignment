@@ -1,0 +1,65 @@
+-var string = "M1-Talent-Program"
+-var titles = ["Program", "Tech", "Talent"]
+-var descriptions = ["Rick and Morty", "Daft Punk", "Gorillaz"]
+-var languages = ["English (EN)", "Español(ES)"]
+-var currencies = ["Dollar (USD)", "Pesos(COP)"]
+-var names = ["Language", "Currency"]
+
+mixin menu(name, optionA, optionB)
+    label(for=name) !{name}
+    select(id=name, name=name)
+        option(selected value="0") !{optionA}
+        option(value="1") !{optionB}
+
+mixin banner(img, title, description)
+    ul 
+        li 
+            figure
+                a(href="#")
+                    img(src=img, alt= description)
+                figcaption !{title}
+doctype html
+html(lang='en')
+    head
+        meta(charset="utf-8")
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name="description" content="My first page with Ally and Pug")
+        title #{string}
+    body
+        header 
+            h1(tabindex="0") Make Huge Moves
+            nav(aria-label="regional-menu")
+                +menu(names[0], languages[0], languages[1])
+                +menu(names[1], currencies[0], currencies[1])
+
+            a(href="#")
+                img(src="/assets/Huge.svg" alt="Huge-logo")
+
+            nav 
+                ul(role="menu") 
+                    each title in titles
+                        li(role="menuitem")!= '<a href="#">'+title+'</a>'
+        main 
+            div(role="region" aria-label="gallery" tabindex="0")
+                +banner('/assets/program-morty.jpg', titles[0], descriptions[0])
+                +banner('/assets/tech-daft-punk.jpg', titles[1], descriptions[1])
+                +banner('/assets/talent-gorillaz.jpg', titles[2], descriptions[2])
+
+            h2 Contact form
+            form
+                fieldset 
+                    legend Personal information
+                    label(for="firstName") Name:
+                    input(type="text" id="firstName" name="firstName" placeholder="enter your name")
+                    label(for="lastName") Last name:
+                    input(type="text" id="lastName" name="lastName")
+                    label(for="email") E-mail:
+                    input(type="email" id="email" name="email")
+                fieldset
+                        label(for="message") Message:
+                        textarea(name="message", id="message")
+                button(aria-label="send form") Submit 
+
+        footer
+            small Powered by the M1 talent program at 
+            b Huge
