@@ -17,7 +17,7 @@ mixin banner(img, title, description)
             figure
                 a(href="#")
                     img(src=img, alt= description)
-                figcaption !{title}
+                figcaption(tabindex="0") !{title}
 doctype html
 html(lang='en')
     head
@@ -33,7 +33,7 @@ html(lang='en')
                 +menu(names[1], currencies[0], currencies[1])
 
             a(href="#")
-                img(src="/assets/Huge.svg" alt="Huge-logo")
+                img(src="./assets/Huge.svg" alt="Huge-logo")
 
             nav 
                 ul(role="menu") 
@@ -41,11 +41,11 @@ html(lang='en')
                         li(role="menuitem")!= '<a href="#">'+title+'</a>'
         main 
             div(role="region" aria-label="gallery" tabindex="0")
-                +banner('/assets/program-morty.jpg', titles[0], descriptions[0])
-                +banner('/assets/tech-daft-punk.jpg', titles[1], descriptions[1])
-                +banner('/assets/talent-gorillaz.jpg', titles[2], descriptions[2])
+                +banner('./assets/program-morty.jpg', titles[0], descriptions[0])
+                +banner('./assets/tech-daft-punk.jpg', titles[1], descriptions[1])
+                +banner('./assets/talent-gorillaz.jpg', titles[2], descriptions[2])
 
-            h2 Contact form
+            h2(tabindex="0") Contact form
             form
                 fieldset 
                     legend Personal information
@@ -61,5 +61,4 @@ html(lang='en')
                 button(aria-label="send form") Submit 
 
         footer
-            small Powered by the M1 talent program at 
-            b Huge
+            small(tabindex="0") Powered by the M1 talent program at Huge
