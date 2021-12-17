@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My first page with Ally and Pug">
+    <link rel="stylesheet" href="style.css">
+    <title>M1-Talent-Program</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__topbar"> 
+        <h1 class="header__topbar__main-title" tabindex="0">Make Huge Moves</h1>
+        <nav class="header__topbar__menu" aria-label="regional-menu">
+          <label class="header__topbar__menu__label" for="Language">Language</label>
+          <select class="header__topbar__menu__select" id="Language" name="Language">
+            <option class="header__topbar__menu__select__option" selected="selected" value="0">English (EN)</option>
+            <option class="header__topbar__menu__select__option" value="1">Español (ES)</option>
+          </select>
+          <label class="header__topbar__menu__label" for="Currency">Currency</label>
+          <select class="header__topbar__menu__select" id="Currency" name="Currency">
+            <option class="header__topbar__menu__select__option" selected="selected" value="0">Dollar (USD)</option>
+            <option class="header__topbar__menu__select__option" value="1">Pesos (COP)</option>
+          </select>
+        </nav>
+      </div>
+      <div class="header__logo"><a class="header__image__link" href="#"><img class="header__image__link__resource" src="/assets/Huge.svg" alt="Huge-logo"></a></div>
+      <nav class="header__navbar"> 
+        <ul class="header__navbar__menu" role="menu"> 
+          <li class="header__navbar__menu__item" role="menuitem"><a class="header__navbar__menu__item__link" href="#">Program</a></li>
+          <li class="header__navbar__menu__item" role="menuitem"><a class="header__navbar__menu__item__link" href="#">Tech</a></li>
+          <li class="header__navbar__menu__item" role="menuitem"><a class="header__navbar__menu__item__link" href="#">Talent</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main"> 
+      <div class="main__gallery" role="region" aria-label="gallery" tabindex="0">
+        <figure class="main__gallery__banner"><img class="main__gallery__banner__resource" src="/assets/daft.svg"></figure>
+        <ul class="main__gallery__images">
+          <li class="main__gallery__images__item"> 
+            <figure><a class="main__gallery__images__item__link" href="#"><img class="main__gallery__images__item__resource" src="/assets/program-morty.jpg" alt="Rick and Morty"/></a>
+              <figcaption class="main__gallery__images__item__caption" tabindex="0">Program</figcaption>
+            </figure>
+          </li>
+          <li class="main__gallery__images__item"> 
+            <figure><a class="main__gallery__images__item__link" href="#"><img class="main__gallery__images__item__resource" src="/assets/tech-daft-punk.jpg" alt="Daft Punk"/></a>
+              <figcaption class="main__gallery__images__item__caption" tabindex="0">Tech</figcaption>
+            </figure>
+          </li>
+          <li class="main__gallery__images__item"> 
+            <figure><a class="main__gallery__images__item__link" href="#"><img class="main__gallery__images__item__resource" src="/assets/talent-gorillaz.jpg" alt="Gorillaz"/></a>
+              <figcaption class="main__gallery__images__item__caption" tabindex="0">Talent</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+      <form class="main__form">
+        <h2 class="main__form__title" tabindex="0">Contact form</h2>
+        <fieldset class="main__form__wrapper"> 
+          <legend class="main__form__wrapper__legend">Personal information</legend>
+          <label class="main__form__wrapper__label" for="firstName">Name:</label>
+          <input class="main__form__wrapper__input" type="text" id="firstName" name="firstName" placeholder="enter your name">
+          <label class="main__form__wrapper__label" for="lastName">Last name:</label>
+          <input class="main__form__wrapper__input" type="text" id="lastName" name="lastName" placeholder="enter your lastname">
+          <label class="main__form__wrapper__label" for="email">E-mail:</label>
+          <input class="main__form__wrapper__input" type="email" id="email" name="email" placeholder="enter your email">
+        </fieldset>
+        <fieldset class="main__form__wrapper"> 
+          <label class="main__form__wrapper__label" for="message">Message:</label>
+          <textarea class="main__form__wrapper__message" name="message" id="message" placeholder="enter your message"></textarea>
+        </fieldset>
+        <button class="main__form__button" aria-label="send form">Submit </button>
+      </form>
+    </main>
+    <footer class="footer"><small class="footer__copy" tabindex="0">Powered by the M1 talent program at Huge</small></footer>
+  </body>
+</html>

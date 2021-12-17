@@ -1,64 +1,69 @@
 -var string = "M1-Talent-Program"
 -var titles = ["Program", "Tech", "Talent"]
 -var descriptions = ["Rick and Morty", "Daft Punk", "Gorillaz"]
--var languages = ["English (EN)", "Español(ES)"]
--var currencies = ["Dollar (USD)", "Pesos(COP)"]
+-var languages = ["English (EN)", "Español (ES)"]
+-var currencies = ["Dollar (USD)", "Pesos (COP)"]
 -var names = ["Language", "Currency"]
 
 mixin menu(name, optionA, optionB)
-    label(for=name) !{name}
-    select(id=name, name=name)
-        option(selected value="0") !{optionA}
-        option(value="1") !{optionB}
+    label.header__topbar__menu__label(for=name) !{name}
+    select.header__topbar__menu__select(id=name, name=name)
+        option.header__topbar__menu__select__option(selected value="0") !{optionA}
+        option.header__topbar__menu__select__option(value="1") !{optionB}
 
 mixin banner(img, title, description)
-    ul 
-        li 
-            figure
-                a(href="#")
-                    img(src=img, alt= description)
-                figcaption(tabindex="0") !{title}
+    li.main__gallery__images__item 
+        figure
+            a.main__gallery__images__item__link(href="#")
+                img.main__gallery__images__item__resource(src=img, alt= description)
+            figcaption.main__gallery__images__item__caption(tabindex="0") !{title}
 doctype html
 html(lang='en')
     head
         meta(charset="utf-8")
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(name="description" content="My first page with Ally and Pug")
+        link(rel="stylesheet" href="style.css")
         title #{string}
     body
-        header 
-            h1(tabindex="0") Make Huge Moves
-            nav(aria-label="regional-menu")
-                +menu(names[0], languages[0], languages[1])
-                +menu(names[1], currencies[0], currencies[1])
+        header.header
+            div.header__topbar 
+                h1.header__topbar__main-title(tabindex="0") Make Huge Moves
+                nav.header__topbar__menu(aria-label="regional-menu")
+                    +menu(names[0], languages[0], languages[1])
+                    +menu(names[1], currencies[0], currencies[1])
 
-            a(href="#")
-                img(src="./assets/Huge.svg" alt="Huge-logo")
+            div.header__logo
+                a.header__image__link(href="#")
+                    img.header__image__link__resource(src="/assets/Huge.svg" alt="Huge-logo")
 
-            nav 
-                ul(role="menu") 
+            nav.header__navbar 
+                ul.header__navbar__menu(role="menu") 
                     each title in titles
-                        li(role="menuitem")!= '<a href="#">'+title+'</a>'
-        main 
-            div(role="region" aria-label="gallery" tabindex="0")
-                +banner('./assets/program-morty.jpg', titles[0], descriptions[0])
-                +banner('./assets/tech-daft-punk.jpg', titles[1], descriptions[1])
-                +banner('./assets/talent-gorillaz.jpg', titles[2], descriptions[2])
+                        li.header__navbar__menu__item(role="menuitem")!= '<a class="header__navbar__menu__item__link" href="#">'+title+'</a>'
+        main.main 
+            div.main__gallery(role="region" aria-label="gallery" tabindex="0")
+                figure.main__gallery__banner
+                    img.main__gallery__banner__resource(src='/assets/daft.svg')
+                ul.main__gallery__images
+                    +banner('/assets/program-morty.jpg', titles[0], descriptions[0])
+                    +banner('/assets/tech-daft-punk.jpg', titles[1], descriptions[1])
+                    +banner('/assets/talent-gorillaz.jpg', titles[2], descriptions[2])
 
-            h2(tabindex="0") Contact form
-            form
-                fieldset 
-                    legend Personal information
-                    label(for="firstName") Name:
-                    input(type="text" id="firstName" name="firstName" placeholder="enter your name")
-                    label(for="lastName") Last name:
-                    input(type="text" id="lastName" name="lastName" placeholder="enter your lastname")
-                    label(for="email") E-mail:
-                    input(type="email" id="email" name="email" placeholder="enter your email")
-                fieldset
-                        label(for="message") Message:
-                        textarea(name="message", id="message" placeholder="enter your message")
-                button(aria-label="send form") Submit 
+            form.main__form
+                h2.main__form__title(tabindex="0") Contact form
+                fieldset.main__form__wrapper 
+                    legend.main__form__wrapper__legend Personal information
+                    label.main__form__wrapper__label(for="firstName") Name:
+                    input.main__form__wrapper__input(type="text" id="firstName" name="firstName" placeholder="enter your name")
+                    label.main__form__wrapper__label(for="lastName") Last name:
+                    input.main__form__wrapper__input(type="text" id="lastName" name="lastName" placeholder="enter your lastname")
+                    label.main__form__wrapper__label(for="email") E-mail:
+                    input.main__form__wrapper__input(type="email" id="email" name="email" placeholder="enter your email")
+                fieldset.main__form__wrapper 
+                    label.main__form__wrapper__label(for="message") Message:
+                    textarea.main__form__wrapper__message(name="message", id="message" placeholder="enter your message")
+                button.main__form__button(aria-label="send form") Submit 
 
-        footer
-            small(tabindex="0") Powered by the M1 talent program at Huge
+        footer.footer
+            small.footer__copy(tabindex="0") Powered by the M1 talent program at Huge
