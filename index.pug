@@ -8,13 +8,13 @@
 mixin menu(name, optionA, optionB)
     label.topbar__label(for=name) !{name}
     select.topbar__select(id=name, name=name)
-        option.topbar__option(selected value="0") !{optionA}
-        option.topbar__option(value="1") !{optionB}
+        option(selected value="0") !{optionA}
+        option(value="1") !{optionB}
 
 mixin banner(img, title, description)
-    figure.gallery__box
-        a.gallery__link(href="#")
-            img.gallery__resource(src=img, alt= description)
+    figure.gallery__wrap-item
+        a(href="#")
+            img.gallery__img(src=img, alt= description)
         figcaption.gallery__caption(tabindex="0") !{title}
 doctype html
 html(lang='en')
@@ -27,46 +27,46 @@ html(lang='en')
     body
         header
             div.topbar 
-                h1.topbar__main-title(tabindex="0") Make Huge Moves
+                h1.topbar__title-1(tabindex="0") Make Huge Moves
                 nav.topbar__menu(aria-label="regional-menu")
-                    div.topbar__wrap
+                    div.topbar__menu-wrap
                         +menu(names[0], languages[0], languages[1])
-                    div.topbar__wrap
+                    div.topbar__menu-wrap
                         +menu(names[1], currencies[0], currencies[1])
 
             div.logo
                 a.logo__link(href="#")
-                    img.logo__resource(src="/assets/Huge-logo.svg" alt="Huge-logo")
+                    img.logo__link-img(src="/assets/Huge-logo.svg" alt="Huge-logo")
 
             nav.navbar 
                 ul.navbar__menu(role="menu") 
                     each title in titles
-                        li.navbar__item(role="menuitem")!= '<a class="navbar__link" href="#">'+title+'</a>'
+                        li(role="menuitem")!= '<a class="navbar__menu-link" href="#">'+title+'</a>'
         main
             div.gallery(role="region" aria-label="gallery" tabindex="0")
                 figure.gallery__banner
-                    img.gallery__main-resource(src='/assets/Banner.svg')
+                    img.gallery__banner-img(src='/assets/Banner.svg' alt="Daft-Punk-banner")
                 article.gallery__wrap
                     +banner('/assets/Image-1.svg', titles[0], descriptions[0])
                     +banner('/assets/Image-2.svg', titles[1], descriptions[1])
                     +banner('/assets/Image-3.svg', titles[2], descriptions[2])
 
             form.form
-                h2.form__title(tabindex="0") Contact form
+                h2.form__title-2(tabindex="0") Contact us
                 fieldset.form__wrap
-                    legend.form__legend Personal information
-                    label.form__label(for="firstName") Name:
-                    input.form__input(type="text" id="firstName" name="firstName" placeholder="Enter your name")
-                    label.form__label(for="lastName") Last name:
-                    input.form__input(type="text" id="lastName" name="lastName" placeholder="Enter your lastname")
-                    label.form__label(for="email") E-mail:
-                    input.form__input(type="email" id="email" name="email" placeholder="Enter your email")
+                    legend.form__wrap-legend Personal information
+                    label.form__wrap-label(for="firstName") Name:
+                    input.form__wrap-input(type="text" id="firstName" name="firstName" placeholder="Enter your name")
+                    label.form__wrap-label(for="lastName") Last name:
+                    input.form__wrap-input(type="text" id="lastName" name="lastName" placeholder="Enter your lastname")
+                    label.form__wrap-label(for="email") E-mail:
+                    input.form__wrap-input(type="email" id="email" name="email" placeholder="Enter your email")
                 fieldset.form__wrap 
-                    label.form__label(for="message") Message:
-                    textarea.form__input(name="message", id="message" placeholder="Enter your message")
+                    label.form__wrap-label(for="message") Message:
+                    textarea.form__wrap-input(name="message", id="message" placeholder="Enter your message")
                 button.form__button(aria-label="send form") SUBMIT 
 
         footer.footer
             p.footer__copy
-                small(tabindex="0") Powered by the M1 talent program at 
-                span.footer__word(tabindex="0") Huge
+                small(tabindex="0") Powered by the M1 talent program at Huge 
+                
