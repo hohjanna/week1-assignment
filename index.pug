@@ -36,7 +36,7 @@ html(lang='en')
 
             div.logo
                 a.logo__link(href="#")
-                    img.logo__link-img(src="/assets/Huge-logo.svg" alt="Huge-logo")
+                    img.logo__link-img(src="./assets/Huge-logo.svg" alt="Huge-logo")
 
             nav.navbar 
                 ul.navbar__menu(role="menu") 
@@ -45,11 +45,11 @@ html(lang='en')
         main
             div.gallery(role="region" aria-label="gallery" tabindex="0")
                 figure.gallery__banner
-                    img.gallery__banner-img(src='/assets/Banner.svg' alt="Daft-Punk-banner")
+                    img.gallery__banner-img(src='./assets/Banner.svg' alt="Daft-Punk-banner")
                 article.gallery__wrap
-                    +banner('/assets/Image-1.svg', titles[0], descriptions[0])
-                    +banner('/assets/Image-2.svg', titles[1], descriptions[1])
-                    +banner('/assets/Image-3.svg', titles[2], descriptions[2])
+                    +banner('./assets/Image-1.svg', titles[0], descriptions[0])
+                    +banner('./assets/Image-2.svg', titles[1], descriptions[1])
+                    +banner('./assets/Image-3.svg', titles[2], descriptions[2])
 
             form.form
                 h2.form__title-2(tabindex="0") Contact us
