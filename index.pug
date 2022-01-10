@@ -1,69 +1,68 @@
 -var string = "M1-Talent-Program"
--var titles = ["Program", "Tech", "Talent"]
--var descriptions = ["Pink Floyd", "Joy Division", "Gorillaz"]
+-var titles = ["Tech", "Talent", "Program"]
+-var descriptions = ["Spaceship", "Start", "Exercise weights"]
 -var languages = ["English (EN)", "Español (ES)"]
 -var currencies = ["Dollar (USD)", "Pesos (COP)"]
 -var names = ["Language", "Currency"]
 
 mixin menu(name, optionA, optionB)
-    label.topbar__label(for=name) !{name}
-    select.topbar__select(id=name, name=name)
+    label.topbar__menu-label(for=name) !{name}
+    select.topbar__menu-select(id=name, name=name)
         option(selected value="0") !{optionA}
         option(value="1") !{optionB}
 
 mixin banner(img, title, description)
-    figure.gallery__wrap-item
+    figure.content__gallery-wrap
         a(href="#")
-            img.gallery__img(src=img, alt= description)
-        figcaption.gallery__caption(tabindex="0") !{title}
+            img.content__gallery-img(src=img, alt= description)
+        h2.content__gallery-caption(tabindex="0") !{title}
 doctype html
 html(lang='en')
     head
         meta(charset="utf-8")
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(name="description" content="My first page with Ally and Pug")
-        link(rel="stylesheet" href="style.css")
+        link(rel="stylesheet",href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Oswald:400,500,600,700&display=swap" )
+        link(rel="stylesheet" href="./style.css")
         title #{string}
     body
-        header
-            div.topbar 
-                h1.topbar__title-1(tabindex="0") Make Huge Moves
-                nav.topbar__menu(aria-label="regional-menu")
-                    div.topbar__menu-wrap
-                        +menu(names[0], languages[0], languages[1])
-                    div.topbar__menu-wrap
-                        +menu(names[1], currencies[0], currencies[1])
+        header.topbar
+            h1.topbar__title(tabindex="0") Make Huge Moves
+            nav.topbar__menu(aria-label="regional-menu")
+                div.topbar__menu-wrap
+                    +menu(names[0], languages[0], languages[1])
+                div.topbar__menu-wrap
+                    +menu(names[1], currencies[0], currencies[1])
 
-            div.logo
-                a.logo__link(href="#")
-                    img.logo__link-img(src="./assets/Huge-logo.svg" alt="Huge-logo")
+            .topbar__logo
+                a(href="#")
+                    img.topbar__logo-img(src="../assets/Huge-logo.svg" alt="Huge-logo")
 
-            nav.navbar 
-                ul.navbar__menu(role="menu") 
+            nav.topbar__nav
+                ul.topbar__nav-menu(role="menu") 
                     each title in titles
-                        li(role="menuitem")!= '<a class="navbar__menu-link" href="#">'+title+'</a>'
-        main
-            div.gallery(role="region" aria-label="gallery" tabindex="0")
-                figure.gallery__banner
-                    img.gallery__banner-img(src='./assets/Banner.svg' alt="Daft-Punk-banner")
-                article.gallery__wrap
-                    +banner('./assets/Image-1.svg', titles[0], descriptions[0])
-                    +banner('./assets/Image-2.svg', titles[1], descriptions[1])
-                    +banner('./assets/Image-3.svg', titles[2], descriptions[2])
+                        li(role="menuitem")!= '<a class="topbar__nav-title" href="#">'+title+'</a>'
+        main.content
+            .content__gallery(role="region" aria-label="gallery" tabindex="0")
+                figure
+                    img.content__gallery-banner(src='../assets/Banner.svg' alt="Banner")
+                article.content__gallery-images
+                    +banner('../assets/Image-1.svg', titles[0], descriptions[0])
+                    +banner('../assets/Image-2.svg', titles[1], descriptions[1])
+                    +banner('../assets/Image-3.svg', titles[2], descriptions[2])
 
             form.form
-                h2.form__title-2(tabindex="0") Contact us
+                h3.form__title(tabindex="0") Let's talk :)
                 fieldset.form__wrap
-                    legend.form__wrap-legend Personal information
-                    label.form__wrap-label(for="firstName") Name:
+                    label.form__wrap-label(for="firstName") Name
                     input.form__wrap-input(type="text" id="firstName" name="firstName" placeholder="Enter your name")
-                    label.form__wrap-label(for="lastName") Last name:
+                    label.form__wrap-label(for="lastName") Last name
                     input.form__wrap-input(type="text" id="lastName" name="lastName" placeholder="Enter your lastname")
-                    label.form__wrap-label(for="email") E-mail:
+                    label.form__wrap-label(for="email") E-mail
                     input.form__wrap-input(type="email" id="email" name="email" placeholder="Enter your email")
                 fieldset.form__wrap 
-                    label.form__wrap-label(for="message") Message:
-                    textarea.form__wrap-input(name="message", id="message" placeholder="Enter your message")
+                    label.form__wrap-label(for="message") Message
+                    textarea.form__wrap-input(name="message", id="message" placeholder="Write something cool")
                 button.form__button(aria-label="send form") SUBMIT 
 
         footer.footer

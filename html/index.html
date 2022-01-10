@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My first page with Ally and Pug">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Oswald:400,500,600,700&amp;display=swap">
+    <link rel="stylesheet" href="./style.css">
+    <title>M1-Talent-Program</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="topbar__title" tabindex="0">Make Huge Moves</h1>
+      <nav class="topbar__menu" aria-label="regional-menu">
+        <div class="topbar__menu-wrap">
+          <label class="topbar__menu-label" for="Language">Language</label>
+          <select class="topbar__menu-select" id="Language" name="Language">
+            <option selected="selected" value="0">English (EN)</option>
+            <option value="1">Español (ES)</option>
+          </select>
+        </div>
+        <div class="topbar__menu-wrap">
+          <label class="topbar__menu-label" for="Currency">Currency</label>
+          <select class="topbar__menu-select" id="Currency" name="Currency">
+            <option selected="selected" value="0">Dollar (USD)</option>
+            <option value="1">Pesos (COP)</option>
+          </select>
+        </div>
+      </nav>
+      <div class="topbar__logo"><a href="#"><img class="topbar__logo-img" src="../assets/Huge-logo.svg" alt="Huge-logo"></a></div>
+      <nav class="topbar__nav">
+        <ul class="topbar__nav-menu" role="menu"> 
+          <li role="menuitem"><a class="topbar__nav-title" href="#">Tech</a></li>
+          <li role="menuitem"><a class="topbar__nav-title" href="#">Talent</a></li>
+          <li role="menuitem"><a class="topbar__nav-title" href="#">Program</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="content">
+      <div class="content__gallery" role="region" aria-label="gallery" tabindex="0">
+        <figure><img class="content__gallery-banner" src="../assets/Banner.svg" alt="Banner"></figure>
+        <article class="content__gallery-images">
+          <figure class="content__gallery-wrap"><a href="#"><img class="content__gallery-img" src="../assets/Image-1.svg" alt="Spaceship"/></a>
+            <h2 class="content__gallery-caption" tabindex="0">Tech</h2>
+          </figure>
+          <figure class="content__gallery-wrap"><a href="#"><img class="content__gallery-img" src="../assets/Image-2.svg" alt="Start"/></a>
+            <h2 class="content__gallery-caption" tabindex="0">Talent</h2>
+          </figure>
+          <figure class="content__gallery-wrap"><a href="#"><img class="content__gallery-img" src="../assets/Image-3.svg" alt="Exercise weights"/></a>
+            <h2 class="content__gallery-caption" tabindex="0">Program</h2>
+          </figure>
+        </article>
+      </div>
+      <form class="form">
+        <h3 class="form__title" tabindex="0">Let's talk :)</h3>
+        <fieldset class="form__wrap">
+          <label class="form__wrap-label" for="firstName">Name</label>
+          <input class="form__wrap-input" type="text" id="firstName" name="firstName" placeholder="Enter your name">
+          <label class="form__wrap-label" for="lastName">Last name</label>
+          <input class="form__wrap-input" type="text" id="lastName" name="lastName" placeholder="Enter your lastname">
+          <label class="form__wrap-label" for="email">E-mail</label>
+          <input class="form__wrap-input" type="email" id="email" name="email" placeholder="Enter your email">
+        </fieldset>
+        <fieldset class="form__wrap"> 
+          <label class="form__wrap-label" for="message">Message</label>
+          <textarea class="form__wrap-input" name="message" id="message" placeholder="Write something cool"></textarea>
+        </fieldset>
+        <button class="form__button" aria-label="send form">SUBMIT </button>
+      </form>
+    </main>
+    <footer class="footer">
+      <p class="footer__copy"><small tabindex="0">Powered by the M1 talent program at Huge </small></p>
+    </footer>
+  </body>
+</html>
