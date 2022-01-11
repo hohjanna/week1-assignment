@@ -36,7 +36,7 @@ html(lang='en')
 
             .topbar__logo
                 a(href="#")
-                    img.topbar__logo-img(src="../assets/Huge-logo.svg" alt="Huge-logo")
+                    img.topbar__logo-img(src="./assets/Huge-logo.svg" alt="Huge-logo")
 
             nav.topbar__nav
                 ul.topbar__nav-menu(role="menu") 
@@ -45,11 +45,11 @@ html(lang='en')
         main.content
             .content__gallery(role="region" aria-label="gallery" tabindex="0")
                 figure
-                    img.content__gallery-banner(src='../assets/Banner.svg' alt="Banner")
+                    img.content__gallery-banner(src='./assets/Banner.svg' alt="Banner")
                 article.content__gallery-images
-                    +banner('../assets/Image-1.svg', titles[0], descriptions[0])
-                    +banner('../assets/Image-2.svg', titles[1], descriptions[1])
-                    +banner('../assets/Image-3.svg', titles[2], descriptions[2])
+                    +banner('./assets/Image-1.svg', titles[0], descriptions[0])
+                    +banner('./assets/Image-2.svg', titles[1], descriptions[1])
+                    +banner('./assets/Image-3.svg', titles[2], descriptions[2])
 
             form.form
                 h3.form__title(tabindex="0") Let's talk :)

@@ -51,10 +51,8 @@ body {
 }
 .topbar__menu-select {
 	background-color: rgba(255, 255, 255, 0.5);
-	background-color: transparent;
 	border-radius: 3.125rem;
 	border: 0.125rem solid #ffffff;
-	border: none;
 	color: #5352ed;
 	font-weight: 600;
 	margin: 0;
@@ -96,6 +94,7 @@ body {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	padding: 30px 0px 30px 0px;
 }
 .content__gallery-wrap {
 	background-color: #ffffff;
