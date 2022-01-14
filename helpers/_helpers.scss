@@ -1,0 +1,75 @@
+$active-btn: #ffda3f;
+$color-bg: #f9f9f9;
+$color-shadow: #babecc;
+$desktop: 1024px;
+$light-color: #ffffff;
+$main-font: 'Lato', sans-serif;
+$primary-color: #182954;
+$secondary-color: #5352ed;
+$secondary-font: 'Oswald', sans-serif;
+$tablet: 768px;
+
+@mixin box {
+	background-color: $light-color;
+	border-radius: 1.375rem;
+	box-shadow: 0px 0.25rem 1.0625rem rgba(0, 0, 0, 0.15);
+	margin: 1.25rem auto;
+	width: 80%;
+}
+
+@mixin dropdown-menu {
+	background-color: opacity($light-color, 0.5);
+	background-color: transparent;
+	border-radius: 3.125rem;
+	border: 0.125rem solid $light-color;
+	border: none;
+	color: $secondary-color;
+	font-weight: 600;
+	margin: 0;
+	outline: none;
+	padding: 0 1em 0 0;
+	padding: 0.25em 0.5em;
+	width: 90%;
+}
+
+@mixin clean {
+	border-radius: 1rem * 20;
+	border: 0;
+	font-family: $main-font;
+	font-size: 0.9375rem;
+	outline: 0;
+	padding: 1rem;
+}
+
+@mixin transition-input {
+	-webkit-appearance: none;
+	appearance: none;
+	box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $light-color;
+	box-sizing: border-box;
+	margin-right: 1rem/2;
+	transition: all 0.2s ease-in-out;
+	width: 100%;
+}
+
+@mixin transition-button {
+	box-shadow: -5px -5px 20px $light-color, 5px 5px 20px $color-shadow;
+	color: #61677c;
+	cursor: pointer;
+	font-weight: 600;
+	font-weight: bold;
+	transition: all 0.2s ease-in-out;
+	width: 100%;
+}
+
+@mixin titles($font) {
+	@if $font == $main-font {
+		font-family: $main-font;
+	} @else {
+		font-family: $secondary-font;
+		text-transform: uppercase;
+	}
+}
+
+@function opacity($color, $nivel) {
+	@return rgba($color, $nivel);
+}
