@@ -1,1 +1,1 @@
-"Talent Program: My first project learning about BEM and CSS"
+"Talent Program: My first project learning about SASS"
